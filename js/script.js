@@ -7,6 +7,7 @@ const errorMessage = document.querySelector(".error");
 const header = document.querySelector("header");
 const yearBtn = document.querySelector("#yearBtn");
 const yearSelect = document.querySelector("#select");
+const loader = document.querySelector(".loader");
 let arr = [];
 // swiper
 const swiper = new Swiper(".swiper", {
@@ -38,6 +39,9 @@ fetch("https://639c73ba16d1763ab14a56ac.mockapi.io/posts")
   })
   .catch((error) => {
     console.log(error);
+  })
+  .finally(() => {
+    loader.style.display = "none";
   });
 
 function render(element) {
@@ -112,3 +116,4 @@ elFather.addEventListener("click", (evt) => {
     window.location.href = "http://127.0.0.1:5500/pages/single.html";
   }
 });
+// loader
