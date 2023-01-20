@@ -1,0 +1,29 @@
+.singleImg {
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.singleImg p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 170.3%;
+  color: #58667e;
+  width: 600px;
+}
+
+.singleBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.singleBtns span {
+  background: rgba(13, 117, 255, 0.09);
+  border-radius: 30px;
+  color: #0d75ff;
+  padding: 5px 25px;
+}

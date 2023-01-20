@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title -->
+    <title>BookShelter</title>
+    <!-- links -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./img/logoIcon.svg" type="image/x-icon" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <!-- google-fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div class="container">
+        <div class="headerFather">
+          <div class="logo">
+            <a href="index.html" class="logoIcon">
+              <img src="./img/logoIcon.svg" alt="" />
+              BookShelter
+            </a>
+          </div>
+          <form id="searchForm" class="search">
+            <div class="fatherInput">
+              <input
+                type="search"
+                class="searchInput"
+                placeholder="Search books"
+              />
+              <i class="fa-solid iconSearch fa-magnifying-glass"></i>
+            </div>
+          </form>
+          <div class="moon">
+            <a href="#" class="darkMod">
+              <img src="./img/sunny.svg" alt="" />
+            </a>
+            <button id="login">Login</button>
+          </div>
+        </div>
+        <div class="borderFather">
+          <div class="day">
+            <p>Showing 18 Result</p>
+            <form id="yearBtn">
+              <select name="1" id="select">
+                <option class="option" value="">Select a book year</option>
+                <option class="option" value="2023">2023</option>
+                <option class="option" value="2022">2022</option>
+                <option class="option" value="2021">2021</option>
+                <option class="option" value="2020">2020</option>
+                <option class="option" value="2019">2019</option>
+                <option class="option" value="2018">2018</option>
+                <option class="option" value="2017">2017</option>
+                <option class="option" value="2016">2016</option>
+              </select>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- main -->
+    <main>
+      <div class="container">
+        <div class="fatherSwiper">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./img/slider1.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/slider2.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/slider3.webp" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/slider6.jfif" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/slider7.jpeg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/slider8.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/slider9.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/slider10.jfif" alt="" />
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <section class="books">
+          <div class="mainFather">
+            <div class="mainText">
+              <h4>Bookmarks</h4>
+              <p>If you don’t like to read, you haven’t found the right book</p>
+            </div>
+          </div>
+          <div class="allFatherCards">
+            <div class="cardFather">
+              <div class="cardsColor">
+                <div class="imgColor">
+                  <img src="./img/img1.png" alt="" />
+                </div>
+                <div class="cardTexts">
+                  <p class="name">Python</p>
+                  <p class="title">David M. Beazley</p>
+                  <p class="year">2009</p>
+                </div>
+                <div class="btnFather">
+                  <div class="cardBtns">
+                    <a href="#" class="bookMark">Bookmark</a>
+                    <a href="#" class="moreInfo">More Info</a>
+                  </div>
+                  <a href="#" class="read">Read</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="error">
+          <div class="errorBtn">
+            <p>No information found</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- js-file -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
