@@ -2,6 +2,7 @@ const id = localStorage.getItem("id");
 const elFather = document.querySelector(".single");
 const ArryLangth = document.querySelector(".len");
 const elFatherTwo = document.querySelector(".day p");
+const elLoader = document.querySelector(".loaderFather");
 let arr = [];
 
 fetch(`https://639c73ba16d1763ab14a56ac.mockapi.io/posts/${id}`)
@@ -12,7 +13,8 @@ fetch(`https://639c73ba16d1763ab14a56ac.mockapi.io/posts/${id}`)
     arr = elem;
     render(arr);
     renderTwo(arr);
-    console.log(arr);
+    elLoader.style.display = "none";
+    document.body.style.overflow = "auto";
   });
 
 function render(element) {

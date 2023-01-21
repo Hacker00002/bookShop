@@ -13,6 +13,7 @@ const markBtn = document.querySelector(".mark");
 const addCard = document.querySelector(".mainFather");
 const notFound = document.querySelector(".notFound");
 const elLoader = document.querySelector(".loaderFather");
+const elFatherThree = document.querySelector(".fthareAddDel");
 let arr = [];
 // swiper
 const swiper = new Swiper(".swiper", {
@@ -66,7 +67,7 @@ function render(element) {
     </div>
     <div class="btnFather">
       <div class="cardBtns">
-        <a href="#" class="bookMark">Add to card</a>
+        <button data-id=${renderArr.id} class="bookMark">Add to card</button>
         <button data-id=${renderArr.id} class="moreInfo">More Info</button>
       </div>
       <a href="${renderArr.link}" class="read">Buy Now</a>
@@ -128,4 +129,34 @@ elFather.addEventListener("click", (evt) => {
 // markBtn
 markBtn.addEventListener("click", (e) => {
   addCard.classList.toggle("activeThree");
+});
+let addCards = [];
+elFather.addEventListener("click", (evt) => {
+  const id = evt.target.dataset.id;
+  if (evt.target.matches(".bookMark")) {
+    fetch(`https://639c73ba16d1763ab14a56ac.mockapi.io/posts/${id}`)
+      .then((res) => res.json())
+      .then((elem) => {
+        let newBookMark = {
+          id: elem.id,
+          title: elem.title,
+          description: elem.description,
+        };
+        addCards.push(newBookMark);
+        localStorage.setItem("item", JSON.stringify(addCards));
+        window.location.reload();
+      });
+  }
+});
+const elementTwo = JSON.parse(localStorage.getItem("item"));
+const newDiwThree = document.createElement("div");
+elementTwo.forEach((polo) => {
+  newDiwThree.innerHTML = `
+    <div class="bgAdd">
+    <h4>${polo.title}</h4>
+    <p>${polo.description}</p>
+    <i class="fa-solid del fa-book-open"></i>
+    <i class="fa-solid del fa-trash"></i>
+      `;
+  elFatherThree.appendChild(newDiwThree);
 });
