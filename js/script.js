@@ -7,7 +7,12 @@ const errorMessage = document.querySelector(".error");
 const header = document.querySelector("header");
 const yearBtn = document.querySelector("#yearBtn");
 const yearSelect = document.querySelector("#select");
-const loader = document.querySelector(".loader");
+const ArryLangth = document.querySelector(".len");
+const elFatherTwo = document.querySelector(".day p");
+const markBtn = document.querySelector(".mark");
+const addCard = document.querySelector(".mainFather");
+const notFound = document.querySelector(".notFound");
+const elLoader = document.querySelector(".loaderFather");
 let arr = [];
 // swiper
 const swiper = new Swiper(".swiper", {
@@ -36,18 +41,19 @@ fetch("https://639c73ba16d1763ab14a56ac.mockapi.io/posts")
   .then((dataTwo) => {
     arr = dataTwo;
     render(arr);
+    renderTwo(arr);
+    elLoader.style.display = "none";
+    document.body.style.overflow = "auto";
   })
   .catch((error) => {
     console.log(error);
-  })
-  .finally(() => {
-    loader.style.display = "none";
   });
 
 function render(element) {
   elFather.innerHTML = "";
   element.forEach((renderArr) => {
     const newDiv = document.createElement("div");
+
     newDiv.innerHTML = `
     <div class="cardsColor">
     <div class="imgColor">
@@ -60,10 +66,10 @@ function render(element) {
     </div>
     <div class="btnFather">
       <div class="cardBtns">
-        <a href="#" class="bookMark">Bookmark</a>
+        <a href="#" class="bookMark">Add to card</a>
         <button data-id=${renderArr.id} class="moreInfo">More Info</button>
       </div>
-      <a href="${renderArr.link}" class="read">Read</a>
+      <a href="${renderArr.link}" class="read">Buy Now</a>
     </div>
   </div>
   `;
@@ -71,28 +77,30 @@ function render(element) {
   });
 }
 
-let sum = 0;
-
-for (let index = 0; index < arr.length; index++) {
-  sum += arr.index;
-  console.log(sum);
+function renderTwo(renders) {
+  elFatherTwo.innerHTML = "";
+  const newDivTwo = document.createElement("div");
+  newDivTwo.innerHTML = `
+    <p>Showing <span class="len">${renders.length}</span> Result</p>
+    `;
+  elFatherTwo.appendChild(newDivTwo);
 }
-
+let err = [];
 // search
-elForm.addEventListener("submit", (evt) => {
+elForm.addEventListener("keyup", (evt) => {
   evt.preventDefault();
   const elSearchValue = elSearch.value.trim();
   const elReg = new RegExp(elSearchValue, "gi");
 
   const filterItem = arr.filter((elem) => elem.title.match(elReg));
+  renderTwo(filterItem);
 
   if (filterItem.length > 0) {
+    notFound.style.display = "none";
     render(filterItem);
   } else {
-    errorMessage.style.display = "block";
-    setTimeout(() => {
-      errorMessage.style.display = "none";
-    }, 3000);
+    render(err);
+    notFound.style.display = "block";
   }
 });
 // select-year
@@ -102,6 +110,7 @@ yearBtn.addEventListener("change", (evt) => {
   const elReg = new RegExp(elSearchValue, "gi");
 
   const filterItem = arr.filter((elem) => elem.year.match(elReg));
+  renderTwo(filterItem);
 
   if (filterItem.length > 0) {
     render(filterItem);
@@ -116,4 +125,7 @@ elFather.addEventListener("click", (evt) => {
     window.location.href = "http://127.0.0.1:5500/pages/single.html";
   }
 });
-// loader
+// markBtn
+markBtn.addEventListener("click", (e) => {
+  addCard.classList.toggle("activeThree");
+});

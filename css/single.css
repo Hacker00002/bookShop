@@ -11,12 +11,11 @@
   font-size: 13px;
   line-height: 170.3%;
   color: #58667e;
-  width: 600px;
+  width: 1000px;
 }
 
 .singleBtns {
   display: flex;
-  flex-direction: column;
   gap: 30px;
   margin-bottom: 20px;
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title -->
+    <title>Register</title>
+    <!-- links -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="./register.css" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../img/logoIcon.svg" type="image/x-icon" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <!-- google-fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!-- main -->
+    <main id="main">
+      <div class="container">
+        <div class="fatherRegister">
+          <a href="../index.html" class="logoRegister">
+            <img src="../img/logo.svg" alt="" />
+          </a>
+          <form id="register">
+            <div class="user">
+              <input type="email" id="email" placeholder="Email" />
+              <i class="fa-regular users fa-envelope"></i>
+            </div>
+            <div class="user">
+              <input type="text" id="username" placeholder="Username" />
+              <i class="fa-regular users fa-user"></i>
+            </div>
+            <div class="user">
+              <input type="password" id="password" placeholder="Password" />
+              <i class="fa-solid users fa-lock"></i>
+            </div>
+            <button type="submit" id="submitRegister">Submit</button>
+          </form>
+          <div class="errorMessage">
+            <p>Fill in the list error</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- js-file -->
+    <script src="./regidter.js"></script>
+  </body>
+</html>

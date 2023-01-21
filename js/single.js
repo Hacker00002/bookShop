@@ -1,5 +1,7 @@
 const id = localStorage.getItem("id");
 const elFather = document.querySelector(".single");
+const ArryLangth = document.querySelector(".len");
+const elFatherTwo = document.querySelector(".day p");
 let arr = [];
 
 fetch(`https://639c73ba16d1763ab14a56ac.mockapi.io/posts/${id}`)
@@ -9,6 +11,8 @@ fetch(`https://639c73ba16d1763ab14a56ac.mockapi.io/posts/${id}`)
   .then((elem) => {
     arr = elem;
     render(arr);
+    renderTwo(arr);
+    console.log(arr);
   });
 
 function render(element) {
@@ -17,6 +21,7 @@ function render(element) {
   newDiv.innerHTML = `
         <div class="singleImg">
         <img src="${element.avatar}" width="250px" alt="" />
+        <h1><span>${element.title}</span></h1>
         <p>
           ${element.descriptionTwo}
         </p>
@@ -30,4 +35,15 @@ function render(element) {
       </div>
         `;
   elFather.appendChild(newDiv);
+}
+
+function renderTwo(renders) {
+  elFatherTwo.innerHTML = "";
+  const newDivTwo = document.createElement("div");
+  newDivTwo.innerHTML = `
+    <p>Showing <span class="len">${
+      renders.length ? renders.length : "1"
+    }</span> Result</p>
+    `;
+  elFatherTwo.appendChild(newDivTwo);
 }

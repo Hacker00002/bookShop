@@ -38,6 +38,25 @@
   <body>
     <!-- header -->
     <header>
+      <div class="loaderFather">
+        <svg
+          class="spinner"
+          width="65px"
+          height="65px"
+          viewBox="0 0 66 66"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            class="path"
+            fill="none"
+            stroke-width="6"
+            stroke-linecap="round"
+            cx="33"
+            cy="33"
+            r="30"
+          ></circle>
+        </svg>
+      </div>
       <div class="container">
         <div class="headerFather">
           <div class="logo">
@@ -60,12 +79,15 @@
             <a href="#" class="darkMod">
               <img src="./img/sunny.svg" alt="" />
             </a>
-            <button id="login">Login</button>
+            <a href="./register/register.html" id="login">Login</a>
           </div>
         </div>
         <div class="borderFather">
+          <div class="mark">
+            <i class="fa-solid marks fa-book-bookmark"></i>
+          </div>
           <div class="day">
-            <p>Showing 18 Result</p>
+            <p>Showing <span class="len"></span> Result</p>
             <form id="yearBtn">
               <select name="1" id="select">
                 <option class="option" value="">Select a book year</option>
@@ -90,28 +112,32 @@
           <div class="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
+                <img src="./img/logoAmazon.png" class="amazon" alt="" />
                 <img src="./img/slider1.jpg" alt="" />
               </div>
               <div class="swiper-slide">
+                <img src="./img/logoAmazon.png" class="amazon" alt="" />
                 <img src="./img/slider2.jpg" alt="" />
               </div>
               <div class="swiper-slide">
+                <img src="./img/logoAmazon.png" class="amazon" alt="" />
                 <img src="./img/slider3.webp" alt="" />
               </div>
               <div class="swiper-slide">
+                <img src="./img/logoAmazon.png" class="amazon" alt="" />
                 <img src="./img/slider6.jfif" alt="" />
               </div>
               <div class="swiper-slide">
+                <img src="./img/logoAmazon.png" class="amazon" alt="" />
                 <img src="./img/slider7.jpeg" alt="" />
               </div>
               <div class="swiper-slide">
+                <img src="./img/logoAmazon.png" class="amazon" alt="" />
                 <img src="./img/slider8.png" alt="" />
               </div>
               <div class="swiper-slide">
+                <img src="./img/logoAmazon.png" class="amazon" alt="" />
                 <img src="./img/slider9.jpg" alt="" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./img/slider10.jfif" alt="" />
               </div>
             </div>
             <div class="swiper-button-prev"></div>
@@ -147,6 +173,11 @@
             </div>
           </div>
         </section>
+        <div class="fatherNot">
+          <div class="notFound">
+            <img src="./img/404.webp" width="700px" alt="" />
+          </div>
+        </div>
         <div class="error">
           <div class="errorBtn">
             <p>No information found</p>
