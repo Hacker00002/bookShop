@@ -12,7 +12,7 @@ const elFatherTwo = document.querySelector(".day p");
 const markBtn = document.querySelector(".mark");
 const addCard = document.querySelector(".mainFather");
 const notFound = document.querySelector(".notFound");
-const elLoader = document.querySelector(".loaderFather");
+const elLoader = document.querySelector(".fatherLoader");
 const elFatherThree = document.querySelector(".fthareAddDel");
 let arr = [];
 // swiper
@@ -20,16 +20,13 @@ const swiper = new Swiper(".swiper", {
   direction: "horizontal",
   loop: true,
   autoplay: true,
-
   pagination: {
     el: ".swiper-pagination",
   },
-
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-
   scrollbar: {
     el: ".swiper-scrollbar",
   },
@@ -58,7 +55,7 @@ function render(element) {
     newDiv.innerHTML = `
     <div class="cardsColor">
     <div class="imgColor">
-      <img src="${renderArr.avatar}" width="150px" height="200px" alt="" />
+      <img src="${renderArr.avatar}" class="imgColor-posts" alt="" />
     </div>
     <div class="cardTexts">
       <p class="name">${renderArr.title}</p>
@@ -77,13 +74,11 @@ function render(element) {
     elFather.appendChild(newDiv);
   });
 }
-
 function renderTwo(renders) {
   elFatherTwo.innerHTML = "";
   const newDivTwo = document.createElement("div");
   newDivTwo.innerHTML = `
-    <p>Showing <span class="len">${renders.length}</span> Result</p>
-    `;
+    <p>Showing <span class="len">${renders.length}</span> Result</p>`;
   elFatherTwo.appendChild(newDivTwo);
 }
 let err = [];
@@ -92,7 +87,6 @@ elForm.addEventListener("keyup", (evt) => {
   evt.preventDefault();
   const elSearchValue = elSearch.value.trim();
   const elReg = new RegExp(elSearchValue, "gi");
-
   const filterItem = arr.filter((elem) => elem.title.match(elReg));
   renderTwo(filterItem);
 
@@ -141,22 +135,31 @@ elFather.addEventListener("click", (evt) => {
           id: elem.id,
           title: elem.title,
           description: elem.description,
+          avatar: elem.avatar,
         };
         addCards.push(newBookMark);
         localStorage.setItem("item", JSON.stringify(addCards));
-        window.location.reload();
+        // window.location.reload();
       });
   }
 });
 const elementTwo = JSON.parse(localStorage.getItem("item"));
-const newDiwThree = document.createElement("div");
-elementTwo.forEach((polo) => {
-  newDiwThree.innerHTML = `
-    <div class="bgAdd">
-    <h4>${polo.title}</h4>
-    <p>${polo.description}</p>
-    <i class="fa-solid del fa-book-open"></i>
-    <i class="fa-solid del fa-trash"></i>
-      `;
-  elFatherThree.appendChild(newDiwThree);
-});
+resultRender(elementTwo);
+function resultRender(element) {
+  const newDiwThree = document.createElement("div");
+  element.forEach((polo) => {
+    newDiwThree.innerHTML = `
+      <div class="bgAdd">
+      <div class="fatherTwoCards">
+      <div class="textFathers">
+      <h4>${polo.title}</h4>
+      <p>${polo.description}</p>
+      </div>
+      <img src="${polo.avatar}" width="50px" height="70px" alt="" />
+      </div>
+      <i class="fa-solid del fa-book-open"></i>
+      <i class="fa-solid del fa-trash"></i>
+        `;
+    elFatherThree.appendChild(newDiwThree);
+  });
+}
