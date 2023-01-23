@@ -14,6 +14,7 @@ const addCard = document.querySelector(".mainFather");
 const notFound = document.querySelector(".notFound");
 const elLoader = document.querySelector(".fatherLoader");
 const elFatherThree = document.querySelector(".fthareAddDel");
+const topPosts = document.querySelector(".topPosts");
 let arr = [];
 // swiper
 const swiper = new Swiper(".swiper", {
@@ -59,8 +60,8 @@ function render(element) {
     </div>
     <div class="cardTexts">
       <p class="name">${renderArr.title}</p>
-      <p class="title">${renderArr.description}</p>
-      <p class="year">Year:${renderArr.year}</p>
+      <p class="title">${renderArr.description}...</p>
+      <p class="year">Year of the book:${renderArr.year}</p>
     </div>
     <div class="btnFather">
       <div class="cardBtns">
@@ -92,9 +93,11 @@ elForm.addEventListener("keyup", (evt) => {
 
   if (filterItem.length > 0) {
     notFound.style.display = "none";
+    topPosts.style.display = "block";
     render(filterItem);
   } else {
     render(err);
+    topPosts.style.display = "none";
     notFound.style.display = "block";
   }
 });
@@ -108,7 +111,13 @@ yearBtn.addEventListener("change", (evt) => {
   renderTwo(filterItem);
 
   if (filterItem.length > 0) {
+    notFound.style.display = "none";
+    topPosts.style.display = "block";
     render(filterItem);
+  } else {
+    render(err);
+    notFound.style.display = "block";
+    topPosts.style.display = "none";
   }
 });
 render(arr);

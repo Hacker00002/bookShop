@@ -12,7 +12,7 @@ elForm.addEventListener("submit", (evt) => {
   const link = evt.target.link.value;
   const descriptionTwoS = evt.target.descriptionTwo.value;
   const redsTwo = evt.target.reds.value;
-  const cotigories = evt.target.categories.value;
+  const categories = evt.target.categories.value;
 
   const post = {
     title: title,
@@ -22,7 +22,7 @@ elForm.addEventListener("submit", (evt) => {
     link: link,
     descriptionTwo: descriptionTwoS,
     reed: redsTwo,
-    Categories: cotigories,
+    Categories: categories,
     id: "body 1",
   };
   fetch("https://639c73ba16d1763ab14a56ac.mockapi.io/posts", {

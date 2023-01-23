@@ -373,7 +373,7 @@ option {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 
 .notFound {
@@ -832,4 +832,35 @@ option {
   color: #0d75ff;
   font-size: 30px;
   cursor: pointer;
+}
+/* 404 */
+.page_404 {
+  padding: 40px 0;
+  background: #fff;
+  font-family: "Arvo", serif;
+}
+
+.page_404 img {
+  width: 100%;
+  z-index: 1000000;
+}
+
+.four_zero_four_bg {
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  background-position: center;
+  width: 600px;
+  height: 400px;
+}
+
+.four_zero_four_bg h1 {
+  font-size: 80px;
+  text-align: center;
+}
+
+.link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #39ac31;
+  margin: 20px 0;
+  display: inline-block;
 }

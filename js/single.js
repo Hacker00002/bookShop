@@ -30,7 +30,7 @@ function render(element) {
           </p>
           <div class="singleBtns">
           <a href="${element.link}"><span>Add to card</span></a>
-          <h5>Name: <span>${element.title}</span></h5>
+          <h5>Book name: <span>${element.title}</span></h5>
           <h5>Year: <span>${element.year}</span></h5>
           <h5>Reeds: <span>${element.reed}</span></h5>
           <h5>Categories: <span>${element.Categories}</span></h5>
