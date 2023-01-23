@@ -150,7 +150,10 @@ elFather.addEventListener("click", (evt) => {
         };
         addCards.push(newBookMark);
         localStorage.setItem("item", JSON.stringify(addCards));
-        // window.location.reload();
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }
 });
