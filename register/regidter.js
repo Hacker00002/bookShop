@@ -1,6 +1,8 @@
 const errorMessage = document.querySelector(".errorMessage");
 const elForm = document.querySelector("#register");
 const elInput = document.querySelector("#register input");
+const registers = document.querySelector("#login");
+const admin = document.querySelector(".addressAdmin");
 const elInput1 = document.querySelector("#email"),
   elInput2 = document.querySelector("#username"),
   elInput3 = document.querySelector("#password");
@@ -9,7 +11,6 @@ font = document.querySelector(".users");
 elForm.addEventListener("submit", (e) => {
   e.preventDefault();
   if (elInput.value == "") {
-    errorMessage.style.display = "block";
     setTimeout(() => {
       errorMessage.style.display = "none";
     }, 3000);
@@ -17,7 +18,8 @@ elForm.addEventListener("submit", (e) => {
   } else {
     colorsBorder(elInput1, elInput2, elInput3);
     elForm.reset();
-    window.location.href = "http://127.0.0.1:5500/index.html";
+    window.location.href = "../index.html";
+    localStorage.setItem("login", "true");
   }
 });
 

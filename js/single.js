@@ -2,6 +2,7 @@ const id = localStorage.getItem("id");
 const elFather = document.querySelector(".single");
 const ArryLangth = document.querySelector(".len");
 const elFatherTwo = document.querySelector(".day p");
+const admin = document.querySelector(".addressAdmin");
 const elLoader = document.querySelector(".fatherLoader");
 let arr = [];
 
@@ -51,3 +52,27 @@ function renderTwo(renders) {
     `;
   elFatherTwo.appendChild(newDivTwo);
 }
+
+const register = localStorage.getItem("login");
+console.log(register);
+if (register) {
+  admin.style.display = "block";
+  registers.textContent = "Logout";
+} else {
+  admin.style.display = "none";
+  registers.textContent = "Login";
+}
+registers.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.href = "../register/register.html";
+  console.log("Ashraf");
+});
+
+registers.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (registers.textContent == "Logout") {
+    localStorage.removeItem("login");
+    window.location.reload();
+    registers.textContent = "Login";
+  }
+});

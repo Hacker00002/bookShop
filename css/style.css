@@ -842,7 +842,6 @@ option {
 
 .page_404 img {
   width: 100%;
-  z-index: 1000000;
 }
 
 .four_zero_four_bg {
@@ -863,4 +862,9 @@ option {
   background: #39ac31;
   margin: 20px 0;
   display: inline-block;
+}
+
+.logoIpsum {
+  width: 50px;
+  height: 70px;
 }

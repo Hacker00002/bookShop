@@ -596,3 +596,10 @@ header {
     transform: translateY(6px);
   }
 }
+
+/* address */
+.address {
+  color: #0d75ff;
+  font-size: 30px;
+  cursor: pointer;
+}

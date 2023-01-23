@@ -15,6 +15,8 @@ const notFound = document.querySelector(".notFound");
 const elLoader = document.querySelector(".fatherLoader");
 const elFatherThree = document.querySelector(".fthareAddDel");
 const topPosts = document.querySelector(".topPosts");
+const registers = document.querySelector("#login");
+const admin = document.querySelector(".addressAdmin");
 let arr = [];
 // swiper
 const swiper = new Swiper(".swiper", {
@@ -164,7 +166,7 @@ function resultRender(element) {
       <h4>${polo.title}</h4>
       <p>${polo.description}</p>
       </div>
-      <img src="${polo.avatar}" width="50px" height="70px" alt="" />
+      <img src="${polo.avatar}" class="logoIpsum" alt="" />
       </div>
       <i class="fa-solid del fa-book-open"></i>
       <i class="fa-solid del fa-trash"></i>
@@ -172,3 +174,27 @@ function resultRender(element) {
     elFatherThree.appendChild(newDiwThree);
   });
 }
+// register
+const register = localStorage.getItem("login");
+console.log(register);
+if (register) {
+  admin.style.display = "block";
+  registers.textContent = "Logout";
+} else {
+  admin.style.display = "none";
+  registers.textContent = "Login";
+}
+registers.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.href = "../register/register.html";
+  console.log("Ashraf");
+});
+
+registers.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (registers.textContent == "Logout") {
+    localStorage.removeItem("login");
+    window.location.reload();
+    registers.textContent = "Login";
+  }
+});
