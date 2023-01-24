@@ -128,7 +128,7 @@ elFather.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("moreInfo")) {
     const id = evt.target.dataset.id;
     localStorage.setItem("id", id);
-    window.location.href = "http://127.0.0.1:5500/pages/single.html";
+    window.location.href = "../pages/single.html";
   }
 });
 // markBtn
