@@ -132,51 +132,51 @@ elFather.addEventListener("click", (evt) => {
   }
 });
 // markBtn
-markBtn.addEventListener("click", (e) => {
-  addCard.classList.toggle("activeThree");
-});
-let addCards = [];
-elFather.addEventListener("click", (evt) => {
-  const id = evt.target.dataset.id;
-  if (evt.target.matches(".bookMark")) {
-    fetch(`https://639c73ba16d1763ab14a56ac.mockapi.io/posts/${id}`)
-      .then((res) => res.json())
-      .then((elem) => {
-        let newBookMark = {
-          id: elem.id,
-          title: elem.title,
-          description: elem.description,
-          avatar: elem.avatar,
-        };
-        addCards.push(newBookMark);
-        localStorage.setItem("item", JSON.stringify(addCards));
-        window.location.reload();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-});
-const elementTwo = JSON.parse(localStorage.getItem("item"));
-resultRender(elementTwo);
-function resultRender(element) {
-  const newDiwThree = document.createElement("div");
-  element.forEach((polo) => {
-    newDiwThree.innerHTML = `
-      <div class="bgAdd">
-      <div class="fatherTwoCards">
-      <div class="textFathers">
-      <h4>${polo.title}</h4>
-      <p>${polo.description}</p>
-      </div>
-      <img src="${polo.avatar}" class="logoIpsum" alt="" />
-      </div>
-      <i class="fa-solid del fa-book-open"></i>
-      <i class="fa-solid del fa-trash"></i>
-        `;
-    elFatherThree.appendChild(newDiwThree);
-  });
-}
+// markBtn.addEventListener("click", (e) => {
+//   addCard.classList.toggle("activeThree");
+// });
+// let addCards = [];
+// elFather.addEventListener("click", (evt) => {
+//   const id = evt.target.dataset.id;
+//   if (evt.target.matches(".bookMark")) {
+//     fetch(`https://639c73ba16d1763ab14a56ac.mockapi.io/posts/${id}`)
+//       .then((res) => res.json())
+//       .then((elem) => {
+//         let newBookMark = {
+//           id: elem.id,
+//           title: elem.title,
+//           description: elem.description,
+//           avatar: elem.avatar,
+//         };
+//         addCards.push(newBookMark);
+//         localStorage.setItem("item", JSON.stringify(addCards));
+//         window.location.reload();
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//   }
+// });
+// const elementTwo = JSON.parse(localStorage.getItem("item"));
+// resultRender(elementTwo);
+// function resultRender(element) {
+//   const newDiwThree = document.createElement("div");
+//   element.forEach((polo) => {
+//     newDiwThree.innerHTML = `
+//       <div class="bgAdd">
+//       <div class="fatherTwoCards">
+//       <div class="textFathers">
+//       <h4>${polo.title}</h4>
+//       <p>${polo.description}</p>
+//       </div>
+//       <img src="${polo.avatar}" class="logoIpsum" alt="" />
+//       </div>
+//       <i class="fa-solid del fa-book-open"></i>
+//       <i class="fa-solid del fa-trash"></i>
+//         `;
+//     elFatherThree.appendChild(newDiwThree);
+//   });
+// }
 // register
 const register = localStorage.getItem("login");
 console.log(register);
